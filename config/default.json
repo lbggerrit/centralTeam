@@ -1,0 +1,12 @@
+{
+  "host": "localhost",
+  "port": 9001,
+  "appFiles": {
+    "css": "/public/style.css",
+    "clientJS": "/public/build.js"
+  },
+  "devFiles": {
+    "cssOutputFolder": "./dist",
+    "sass": "./public/sass/*.scss"
+  }
+}

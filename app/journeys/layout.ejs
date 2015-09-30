@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<script>
+		document.documentElement.className = document.documentElement.className.replace("no-js","js");
+	</script>
+	<meta charset="UTF-8">
+		<title><%- pageTitle %></title>
+		<link rel="stylesheet" href="/assets/css/main.css">
+	</head>
+	<body>
+		<div id="app"><%- reactOutput %></div>
+		<!-- <div id="app"></div> -->
+
+		<script src="/assets/js/vendor/shims/es5-shim.min.js"></script>
+		<script src="/assets/js/vendor/shims/es5-sham.min.js"></script>
+		<script src="/assets/js/vendor/shims/html5shiv.min.js"></script>
+		<script>
+			var frameworkGlobals = {
+				isServer: false,
+				isClient: true,
+				isDev: false,
+				basePath: '<%- basePath -%>',
+				fluxForm: {
+					clearOnScript: false
+				}
+			};
+
+			<% if(!isBuild) { %>
+			//TODO: Convert stores to JS File
+			var globalStores =  <%- JSON.stringify(stores) %>;
+			<% } %>
+		</script>
+		<% if (isBuild) { %>
+			<script src="/assets/js/<%- pageId %>.mount.min.js"></script>
+		<% } else {%>
+		<script src="/assets/js/bundles/<%- pageId %>.mount.js"></script>
+		<% } %>
+	</body>
+</html>

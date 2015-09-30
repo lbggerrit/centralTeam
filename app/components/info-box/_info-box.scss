@@ -1,0 +1,28 @@
+$box-pad: 8px;
+
+.info-box {
+	margin-top: $grid-gutter-width/2;
+	margin-bottom: $grid-gutter-width/2;
+	padding: $box-pad;
+	border: solid 1px $brand-secondary;
+	background: $light-grey;
+
+	.header {
+		background: $brand-secondary;
+		padding: $box-pad;
+		margin-left: -$box-pad;
+		margin-right: -$box-pad;
+		margin-top: -$box-pad;
+		margin-bottom: $box-pad;
+		color: #fff;
+		font-size: 1.2em;
+	}
+
+	.key {
+		font-weight: bold;
+
+		&:after {
+			content: ': ';
+		}
+	}
+}

@@ -1,0 +1,29 @@
+// scss-lint:disable ImportantRule
+
+.pull-right {
+	float: right !important;
+}
+
+.pull-left {
+	float: left !important;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.pad {
+	padding: $pad;
+}
+
+.brand-secondary {
+	background-color: $brand-secondary;
+}

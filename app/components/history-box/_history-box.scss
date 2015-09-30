@@ -1,0 +1,59 @@
+.history-box {
+
+	margin-top: $grid-gutter-width/2;
+	margin-bottom: $grid-gutter-width/2;
+	padding: $box-pad;
+	border: solid 1px $brand-secondary;
+	background: $light-grey;
+
+	.header {
+		background: $brand-secondary;
+		padding: $box-pad;
+		margin-left: -$box-pad;
+		margin-right: -$box-pad;
+		margin-top: -$box-pad;
+		margin-bottom: $box-pad;
+		color: #fff;
+		font-size: 1.2em;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	.info-box {
+		padding: 0;
+		display: inline-block;
+		width: 100%;
+
+		.header {
+			font-size: 1em;
+
+		}
+
+		span {
+			padding-right: 10px;
+		}
+
+		div {
+			display: inline;
+		}
+	}
+
+	.key-value-list {
+		div {
+			display: inline-block;
+			padding-right: 5px;
+		}
+
+		.key {
+			font-weight: bold;
+
+			&:after {
+				content: ': ';
+			}
+		}
+	}
+}
