@@ -7,10 +7,6 @@ var
 	RestServices = require('./server/rest-services.js'),
 	server;
 
-// master change
-
-console.log('test comment');
-
 server = app.listen(3000, function() {
 	var
 		host = server.address().address,
