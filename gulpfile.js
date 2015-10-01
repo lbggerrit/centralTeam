@@ -46,7 +46,7 @@ var
 	task;
 
 for (task in tasks) {
-	gulp.task( task, tasks[task](gulp, plugins, config) );
+	gulp.task(task, tasks[task](gulp, plugins, config));
 }
 
 gulp.task('default', ['browserSync', 'sass', 'browserify'], function() {
@@ -102,4 +102,9 @@ gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
 		.src('app.js')
 		.pipe(gulp.dest(config.buildPath));
 
+	gulp
+		.src([
+			'node_modules/*'
+		])
+		.pipe(gulp.dest(config.buildPath + 'node_modules'));
 });
