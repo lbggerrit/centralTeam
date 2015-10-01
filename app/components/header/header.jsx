@@ -16,6 +16,7 @@ var Header = React.createClass({
 						<nav className="text-right">
 							<ul className="inline-list">
 								<li><Link to="/test">Test Link</Link></li>
+								<li><a href="/get-quote">Get Quote</a></li>
 							</ul>
 						</nav>
 						</div>

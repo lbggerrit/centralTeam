@@ -15,7 +15,7 @@ var SelectList = React.createClass({
 				<option
 					key={item.value}
 					value={item.value}
-					selected={ this.state.value === item.value ? 'selected' : ''}>
+					>
 					{item.title}
 				</option>
 			);
@@ -30,7 +30,7 @@ var SelectList = React.createClass({
 		return (
 			<div className="select-list">
 				<FluxForm storeName={this.props.storeName} action={this.props.selectChangeAction}>
-					<select name={this.props.name} id={this.props.id} onChange={this.whenChange}>
+					<select name={this.props.name} id={this.props.id} onChange={this.whenChange} defaultValue={this.state.value}>
 						{this.getOptionsList()}
 					</select>
 					<FluxNoJs>

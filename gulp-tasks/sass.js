@@ -22,7 +22,7 @@ module.exports = function(gulp, plugins, config) {
 			.pipe(plugins.rename({
 				extname: '.css'
 			}))
-			.pipe(gulp.dest(isBuild ? config.buildPath + '/assets/css' : 'app/assets/css'))
+			.pipe(gulp.dest(isBuild ? config.buildPath + config.buildPathPublic + '/assets/css' : 'app/assets/css'))
 			.pipe(plugins.browserSync.stream());
 	};
 };

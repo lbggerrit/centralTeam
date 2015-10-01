@@ -11,6 +11,6 @@ module.exports = function(gulp, plugins, config) {
 			.pipe(plugins.rename({
 				basename: 'index'
 			}))
-			.pipe(gulp.dest(config.buildPath));
+			.pipe(gulp.dest(config.buildPath + config.buildPathPublic));
 	};
 };

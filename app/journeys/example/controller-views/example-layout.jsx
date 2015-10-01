@@ -55,13 +55,15 @@ var App = React.createClass({
 					<div className="container">
 						<div className="row">
 							<div className="col-md-4 text-right pull-right">
-								<SelectList id="data-select"
-												name="dataName"
-												value={this.state.dataName}
-												items={this.state.selectItems}
-												whenChange={this.switchData}
-												storeName={this.state.storeName}
-												selectChangeAction={this.state.getDataAction} />
+								<SelectList
+									id="data-select"
+									name="dataName"
+									value={this.state.dataName}
+									items={this.state.selectItems}
+									whenChange={this.switchData}
+									storeName={this.state.storeName}
+									selectChangeAction={this.state.getDataAction}
+								/>
 							</div>
 						</div>
 					</div>

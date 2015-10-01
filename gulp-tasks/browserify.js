@@ -33,7 +33,7 @@ module.exports = function(gulp, plugins, config) {
 			.pipe(plugins.rename({
 				extname: isBuild ? '.min.js' : '.js'
 			}))
-			.pipe(gulp.dest(isBuild ? config.buildPath + '/assets/js' : 'app/assets/js/bundles'));
+			.pipe(gulp.dest(isBuild ? config.buildPath + config.buildPathPublic + '/assets/js' : 'app/assets/js/bundles'));
 
 		});
 		return plugins.es.merge.apply(null, bundles)

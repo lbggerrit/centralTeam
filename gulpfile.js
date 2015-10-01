@@ -17,7 +17,8 @@ var plugins = {
 	scssLint: require('gulp-scss-lint'),
 	jscs: require('gulp-jscs'),
 	gutil: require('gulp-util'),
-	ejs: require('gulp-ejs')
+	ejs: require('gulp-ejs'),
+	clean: require('gulp-clean')
 };
 
 var config = {
@@ -34,7 +35,9 @@ var config = {
 		'app/sass/**/*.{sass,scss}',
 		'app/components/**/*.{sass,scss}'
 	],
-	buildPath: 'dist/www'
+	buildPath: 'dist/',
+	buildPathPublic: 'www/',
+	buildPathServer: 'server/'
 };
 
 var
@@ -71,18 +74,36 @@ gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
 			'app/assets/js/vendor/**/*.js',
 			'!app/assets/js/vendor/jquery.custom.js'
 		])
-		.pipe(gulp.dest(config.buildPath + '/assets/js/vendor'));
+		.pipe(gulp.dest(config.buildPath + config.buildPathPublic + '/assets/js/vendor'));
 
 	gulp
 		.src([
 			'app/assets/img/**/*'
 		])
-		.pipe(gulp.dest(config.buildPath + '/assets/img'));
+		.pipe(gulp.dest(config.buildPath + config.buildPathPublic + '/assets/img'));
 
 	gulp
 		.src([
 			'app/assets/fonts/**/*'
 		])
-		.pipe(gulp.dest(config.buildPath + '/assets/fonts'));
+		.pipe(gulp.dest(config.buildPath + config.buildPathPublic + '/assets/fonts'));
+
+	gulp
+		.src([
+			'mockdata/*'
+		])
+		.pipe(gulp.dest(config.buildPath + config.buildPathPublic + '/data'));
+
+	gulp
+		.src('package.json')
+		.pipe(gulp.dest(config.buildPath));
+
+	gulp
+		.src('server/*')
+		.pipe(gulp.dest(config.buildPath + config.buildPathServer));
+
+	gulp
+		.src('app.js')
+		.pipe(gulp.dest(config.buildPath))
 
 });

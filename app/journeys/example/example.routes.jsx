@@ -1,4 +1,5 @@
-var React = require('react'),
+var
+	React = require('react'),
 	Register = require('./example.register.js'), // define stores first
 	ReactRouter = require('react-router'),
 	TableLayoutController = require('./controller-views/example-layout.jsx'),
