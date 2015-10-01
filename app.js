@@ -19,5 +19,3 @@ directorys.map(function(directory) {
 });
 
 RestServices.getQuote(app);
-
-console.log('another test');
