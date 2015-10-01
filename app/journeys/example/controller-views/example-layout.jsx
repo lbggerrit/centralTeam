@@ -4,7 +4,8 @@ var React = require('react'),
 	Table = require('../../../components/table/table.jsx'),
 	SelectList = require('../../../components/select-list/select-list.jsx'),
 	Header = require('../../../components/header/header.jsx'),
-	fluxHelper = require('../../../flux/helper.js');
+	fluxHelper = require('../../../flux/helper.js'),
+	StockQuotes = require('../../../components/stock-quotes/stock-quotes.jsx');
 
 var App = React.createClass({
 	getInitialState: function() {
@@ -69,6 +70,11 @@ var App = React.createClass({
 					</div>
 				</div>
 				<div className="container">
+					<div className="row">
+						<div className="col-md-4">
+							<StockQuotes />
+						</div>
+					</div>
 					<div className="row">
 						<div className="col-md-12">
 							<Table className="striped" {...this.state} clickRowItem={this.clickRowItem} />

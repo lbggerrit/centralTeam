@@ -10,6 +10,8 @@ restServices = {
 				url = 'http://www.webservicex.com/stockquote.asmx?wsdl',
 				args = {symbol: 'AAPL'};
 
+			res.setHeader('Access-Control-Allow-Origin', '*');
+
 			soap.createClient(url, function(err, Client) {
 				Client.GetQuote(args, function(err, result) {
 					parseString(result[Object.keys(result)[0]], function(err, json) {

@@ -95,15 +95,11 @@ gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
 		.pipe(gulp.dest(config.buildPath + config.buildPathPublic + '/data'));
 
 	gulp
-		.src('package.json')
-		.pipe(gulp.dest(config.buildPath));
-
-	gulp
 		.src('server/*')
 		.pipe(gulp.dest(config.buildPath + config.buildPathServer));
 
 	gulp
 		.src('app.js')
-		.pipe(gulp.dest(config.buildPath))
+		.pipe(gulp.dest(config.buildPath));
 
 });

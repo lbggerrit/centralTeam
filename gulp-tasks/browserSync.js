@@ -5,7 +5,12 @@ module.exports = function(gulp, plugins) {
 			server: {
 				baseDir: ['app/journeys', 'app'],
 				routes: {'/data': 'mockdata'},
-				directory: true
+				directory: true,
+				middleware: function(req, res, next) {
+					console.log(res);
+					res.setHeader('Access-Control-Allow-Origin', '*');
+					next();
+				}
 			},
 			open: false,
 			logLevel: 'silent',
