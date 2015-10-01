@@ -1,5 +1,5 @@
 var ConstantsClass = require('../helper/class/constants.js'),
-	 keyMirror = require('keyMirror');
+	 keyMirror = require('keymirror');
 
 class ActionConstants extends ConstantsClass {
 	constructor() {
