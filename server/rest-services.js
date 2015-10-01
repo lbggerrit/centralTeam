@@ -21,6 +21,6 @@ restServices = {
 			});
 		});
 	}
-}
+};
 
 module.exports = restServices;

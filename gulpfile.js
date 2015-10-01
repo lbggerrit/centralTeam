@@ -101,10 +101,4 @@ gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
 	gulp
 		.src('app.js')
 		.pipe(gulp.dest(config.buildPath));
-
-	gulp
-		.src([
-			'node_modules/*'
-		])
-		.pipe(gulp.dest(config.buildPath + 'node_modules'));
 });
