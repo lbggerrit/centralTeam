@@ -46,10 +46,10 @@ var
 	task;
 
 for (task in tasks) {
-	gulp.task( task, tasks[task](gulp, plugins, config) );
+	gulp.task(task, tasks[task](gulp, plugins, config));
 }
 
-gulp.task('default', ['browserSync', 'sass', 'browserify'], function() {
+gulp.task('default', ['browserSync', 'sass', 'browserify'], function () {
 	gulp.watch(
 		config.sass,
 		['sass', 'scss-lint']
@@ -68,7 +68,7 @@ gulp.task('default', ['browserSync', 'sass', 'browserify'], function() {
 	);
 });
 
-gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
+gulp.task('production', ['sass', 'browserify', 'ejs'], function () {
 	gulp
 		.src([
 			'app/assets/js/vendor/**/*.js',
@@ -104,6 +104,11 @@ gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
 
 	gulp
 		.src('app.js')
-		.pipe(gulp.dest(config.buildPath))
+		.pipe(gulp.dest(config.buildPath));
 
+	gulp
+		.src([
+			'node_modules/*'
+		])
+		.pipe(gulp.dest(config.buildPath + 'node_modules'));
 });
