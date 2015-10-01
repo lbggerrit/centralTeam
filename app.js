@@ -7,6 +7,8 @@ var
 	RestServices = require('./server/rest-services.js'),
 	server;
 
+// hello
+
 server = app.listen(3000, function() {
 	var
 		host = server.address().address,
