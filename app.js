@@ -1,11 +1,13 @@
 var
+	fs = require('fs'),
+	path = require('path'),
 	express = require('express'),
 	app = express(),
 	directorys = [
 		'www/'
 	],
-	RestServices = require('./server/rest-services.js'),
-	Routes = require('./server/routes.js'),
+	RouteDir = 'routes',
+	files = fs.readdirSync(RouteDir),
 	server;
 
 server = app.listen(3000, function() {
@@ -15,10 +17,13 @@ server = app.listen(3000, function() {
 
 	console.log('Build server running at http://%s:%s', host, port);
 });
+
 directorys.map(function(directory) {
 	app.use(express.static(directory));
 });
 
-Routes(app);
-
-RestServices.getQuote(app);
+files.forEach(function(file) {
+	var filePath = path.resolve('./', RouteDir, file),
+		route = require(filePath);
+	route(app);
+});
