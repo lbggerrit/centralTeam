@@ -5,6 +5,7 @@ var
 		'www/'
 	],
 	RestServices = require('./server/rest-services.js'),
+	Routes = require('./server/routes.js'),
 	server;
 
 server = app.listen(3000, function() {
@@ -17,5 +18,7 @@ server = app.listen(3000, function() {
 directorys.map(function(directory) {
 	app.use(express.static(directory));
 });
+
+Routes(app);
 
 RestServices.getQuote(app);

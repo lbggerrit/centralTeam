@@ -13,7 +13,7 @@ module.exports = function(gulp, plugins) {
 				},
 				directory: true,
 				middleware: function(req, res, next) {
-					if(req.url .indexOf('api/get-quote') != -1) {
+					if(req.url.indexOf('api/get-quote') != -1) {
 						// var
 						// 	url = 'http://www.webservicex.com/stockquote.asmx?wsdl',
 						// 	args = {symbol: 'AAPL'};
