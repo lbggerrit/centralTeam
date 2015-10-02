@@ -31,7 +31,7 @@ var StockQuotes = React.createClass({
 	render: function() {
 		return (
 			<div className="stock-quotes">
-				<a href="#" className="btn btn-primary" onClick={this.getDataEvent}>Get data from remote wsdl</a>
+				<a href="#" className="btn btn-primary" onClick={this.getDataEvent}>Get data from remote public wsdl</a>
 				<ul className="data-list">
 					{this.getRenderedData()}
 				</ul>
