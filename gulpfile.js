@@ -37,7 +37,8 @@ var config = {
 	],
 	buildPath: 'dist/',
 	buildPathPublic: 'www/',
-	buildPathServer: 'server/'
+	buildPathServer: 'server/',
+	buildPathRoutes: 'routes/'
 };
 
 var
@@ -95,8 +96,12 @@ gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
 		.pipe(gulp.dest(config.buildPath + config.buildPathPublic + '/data'));
 
 	gulp
-		.src('server/*')
+		.src('server/**/*')
 		.pipe(gulp.dest(config.buildPath + config.buildPathServer));
+
+	gulp
+		.src('routes/**/*')
+		.pipe(gulp.dest(config.buildPath + config.buildPathRoutes));
 
 	gulp
 		.src('app.js')

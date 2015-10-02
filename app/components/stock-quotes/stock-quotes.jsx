@@ -12,7 +12,7 @@ var StockQuotes = React.createClass({
 	getData: function() {
 		var self = this;
 		$.ajax({
-			url: '/api/get-quote',
+			url: '/api/quote/aapl',
 			success: function(data) {
 				self.setState({...data.StockQuotes.Stock[0]});
 
