@@ -15,7 +15,7 @@ server = app.listen(3000, function() {
 		host = server.address().address,
 		port = server.address().port;
 
-	console.log('Build server running at http://%s:%s', host, port);
+	console.log('Build server running at http://%s:%s but cant see host :( here', host, port);
 });
 
 directorys.map(function(directory) {
