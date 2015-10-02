@@ -1,7 +1,7 @@
 var
 	React = require('react'),
-	ReactRouter = require('react-router'),
-	Link = ReactRouter.Link;
+	ReactRouter = require('react-router');
+	//Link = ReactRouter.Link;
 
 var Header = React.createClass({
 	render: function() {
@@ -15,7 +15,6 @@ var Header = React.createClass({
 						<div className="col-md-8">
 						<nav className="text-right">
 							<ul className="inline-list">
-								<li><Link to="/test">Test Link</Link></li>
 								<li><a href="/api/quote/aapl">Get Quote For AAPL</a></li>
 							</ul>
 						</nav>
