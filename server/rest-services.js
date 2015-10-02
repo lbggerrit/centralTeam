@@ -5,7 +5,8 @@ var
 
 restServices = {
 	getQuote: function(app) {
-		app.get('/get-quote', function(req, res) {
+		app.get('/api/get-quote', function(req, res) {
+			console.log('get-quote');
 			var
 				url = 'http://www.webservicex.com/stockquote.asmx?wsdl',
 				args = {symbol: 'AAPL'};
