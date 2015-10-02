@@ -52,40 +52,10 @@ var App = React.createClass({
 		return (
 			<div>
 				<Header />
-				<div className="brand-secondary pad">
-					<div className="container">
-						<div className="row">
-							<div className="col-md-4 text-right pull-right">
-								<SelectList
-									id="data-select"
-									name="dataName"
-									value={this.state.dataName}
-									items={this.state.selectItems}
-									whenChange={this.switchData}
-									storeName={this.state.storeName}
-									selectChangeAction={this.state.getDataAction}
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div className="container">
 					<div className="row">
 						<div className="col-md-4">
 							<StockQuotes />
-						</div>
-					</div>
-					<div className="row">
-						<div className="col-md-12">
-							<Table className="striped" {...this.state} clickRowItem={this.clickRowItem} />
-						</div>
-					</div>
-					<div className="row">
-						<div className="col-md-7">
-							<InfoBox content={this.state.data[this.state.currentKey]} title="Selected" />
-						</div>
-						<div className="col-md-5">
-							<HistoryBox data={this.state.data} maxHistory="3" maxKeys="2" ids={this.state.keyHistory} title="History" />
 						</div>
 					</div>
 				</div>
