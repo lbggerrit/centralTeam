@@ -1,13 +1,21 @@
+var requireAll = require('require-all');
+
 global.frameworkGlobals = {
-	isServer:true,
-	isClient:false,
-	isDev:false,
-	basePath:''
+	isServer: true,
+	isClient: false,
+	isDev: false,
+	basePath: ''
 };
-
-var requireDir = require('require-dir');
-
-//For jsx compilation
+// For jsx compilation
 require('babel/register');
 
-requireDir('./specs');
+// Require all component specs
+requireAll({
+	dirname: __dirname + '/../../app/components/',
+	filter: /(.+spec)\.jsx$/
+});
+
+// Require any specs within the unit specs folder
+requireAll({
+	dirname: __dirname + '/specs/'
+});

@@ -6,6 +6,18 @@ env:
 globals:
   require: true
   module: true
+  global: true
+  window: true
+# Test globals
+  describe: true
+  it: true
+  beforeAll: true
+  afterEach: true
+  afterAll: true
+  expect: true
+  __dirname: true
+
+
 
 plugins:
   ["react"]
