@@ -111,7 +111,7 @@ gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
 		.pipe(gulp.dest(config.buildPath));
 });
 
-// karma test
+// karma test.
 gulp.task('karma', function(done) {
 	new plugins.KarmaServer({
 		configFile: __dirname + '/karma.conf.js',
