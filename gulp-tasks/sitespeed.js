@@ -5,4 +5,4 @@ module.exports = function (gulp, plugins, config) {
     html: 1,
     resultBaseDir: 'coverage/Sitespeed/'
 	});
-};
+}; 
