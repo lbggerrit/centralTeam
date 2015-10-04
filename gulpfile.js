@@ -53,7 +53,7 @@ for (task in tasks) {
 	gulp.task(task, tasks[task](gulp, plugins, config));
 }
 
-gulp.task('default', ['browserSync', 'sass', 'browserify'], function() {
+gulp.task('default', ['browserSync', 'sass', 'browserify', 'full-test', 'sitespeed'], function() {
 	gulp.watch(
 		config.sass,
 		['sass', 'scss-lint']
@@ -110,3 +110,12 @@ gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
 		.src('app.js')
 		.pipe(gulp.dest(config.buildPath));
 });
+
+gulp.task('karma', function(done) {
+	new plugins.KarmaServer({
+		configFile: __dirname + '/karma.conf.js',
+		singleRun: true
+	}, done).start();
+});
+
+gulp.task('full-test', ['test', 'karma']);
