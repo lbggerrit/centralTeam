@@ -18,7 +18,10 @@ var plugins = {
 	jscs: require('gulp-jscs'),
 	gutil: require('gulp-util'),
 	ejs: require('gulp-ejs'),
-	clean: require('gulp-clean')
+	clean: require('gulp-clean'),
+	KarmaServer: require('karma').Server,
+	sitespeed: require('gulp-sitespeedio'),
+	pa11y: require('gulp-pa11y')
 };
 
 var config = {
