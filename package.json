@@ -63,6 +63,7 @@
     "keymirror": "^0.1.1",
     "node-notifier": "^4.2.3",
     "reactify": "^1.1.1",
+    "require-dir": "^0.3.0",
     "uglifyify": "^3.0.1",
     "vinyl-source-stream": "^1.1.0"
   },
