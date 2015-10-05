@@ -23,7 +23,8 @@ var self = module.exports = {
 				}
 				res.writeHead(200, {
 					'Content-Length': result.length,
-					'Content-Type': 'application/json'
+					'Content-Type': 'application/json',
+					'Access-Control-Allow-Origin': '*'
 				});
 				res.end(result);
 			}, {timeout: 5000});

@@ -1,0 +1,9 @@
+.mock-data {
+	border: solid 1px $grey;
+	padding: $pad;
+	margin: $pad auto;
+
+	.data-list {
+		margin-bottom: 0;
+	}
+}
