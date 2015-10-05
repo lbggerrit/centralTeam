@@ -76,7 +76,8 @@ var Table = React.createClass({
 					total={this.props.data.length}
 					storeName={this.props.storeName}
 					setLimitAction={this.props.setLimitAction} />
-				<table className={'table ' + this.props.className}>
+				<table summary="Dummby data table" className={'table ' + this.props.className}>
+					<caption></caption>
 					<thead>
 						<tr>
 							{this.getTableHead( this.props.data[0] )}

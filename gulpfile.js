@@ -21,7 +21,7 @@ var plugins = {
 	clean: require('gulp-clean'),
 	KarmaServer: require('karma').Server,
 	sitespeed: require('gulp-sitespeedio'),
-	pa11y: require('gulp-pa11y') 
+	pa11y: require('gulp-pa11y')
 };
 
 var config = {
@@ -53,7 +53,7 @@ for (task in tasks) {
 	gulp.task(task, tasks[task](gulp, plugins, config));
 }
 
-gulp.task('default', ['browserSync', 'sass', 'browserify', 'full-test', 'sitespeed'], function() {
+gulp.task('default', ['browserSync', 'sass', 'browserify'], function() {
 	gulp.watch(
 		config.sass,
 		['sass', 'scss-lint']
@@ -70,6 +70,8 @@ gulp.task('default', ['browserSync', 'sass', 'browserify', 'full-test', 'sitespe
 		],
 		['eslint', 'jscs']
 	);
+
+	// gulp.watch(['app/assets/js/bundles/*.js'], ['pa11y']);
 });
 
 gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
@@ -118,4 +120,4 @@ gulp.task('karma', function(done) {
 	}, done).start();
 });
 
-gulp.task('full-test', ['test', 'karma']);
+gulp.task('full-test', ['test', 'karma', 'sitespeed', 'pa11y']);

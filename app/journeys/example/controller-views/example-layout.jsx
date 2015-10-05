@@ -12,7 +12,7 @@ var App = React.createClass({
 		var state;
 
 		this.tableStore = fluxHelper('tableStore');
-		//fire the table get data action on initial state for isomorphic purposes
+		// fire the table get data action on initial state for isomorphic purposes
 		this.switchData(this.tableStore.getState().dataName);
 
 		state = {
@@ -64,12 +64,13 @@ var App = React.createClass({
 						<div className="row">
 							<div className="col-md-4 text-right pull-right">
 								<SelectList id="data-select"
-												name="dataName"
-												value={this.state.dataName}
-												items={this.state.selectItems}
-												whenChange={this.switchData}
-												storeName={this.state.storeName}
-												selectChangeAction={this.state.getDataAction} />
+									name="dataName"
+									value={this.state.dataName}
+									items={this.state.selectItems}
+									whenChange={this.switchData}
+									storeName={this.state.storeName}
+									selectChangeAction={this.state.getDataAction}
+								/>
 							</div>
 						</div>
 					</div>

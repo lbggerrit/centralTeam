@@ -29,14 +29,9 @@ var SelectList = React.createClass({
 	render: function() {
 		return (
 			<div className="select-list">
-				<FluxForm storeName={this.props.storeName} action={this.props.selectChangeAction}>
-					<select name={this.props.name} id={this.props.id} onChange={this.whenChange} defaultValue={this.state.value}>
-						{this.getOptionsList()}
-					</select>
-					<FluxNoJs>
-						<FluxSubmit>Change</FluxSubmit>
-					</FluxNoJs>
-				</FluxForm>
+				<select aria-label={this.props.name} name={this.props.name} id={this.props.id} onChange={this.whenChange} defaultValue={this.state.value}>
+					{this.getOptionsList()}
+				</select>
 			</div>
 		);
 	}

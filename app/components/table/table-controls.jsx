@@ -31,6 +31,7 @@ var TableControls = React.createClass({
 					<FluxNoJs>
 						<FluxSubmit className="btn btn-primary">go</FluxSubmit>
 					</FluxNoJs>
+					<input type="submit" value="Go" className="js-hide" />
 				</FluxForm>
 			</div>
 		);

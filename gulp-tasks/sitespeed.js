@@ -1,8 +1,8 @@
 module.exports = function (gulp, plugins, config) {
 	return plugins.sitespeed({
-		urls: ['http://localhost:9000/', 'http://localhost:9000/example/', 'http://localhost:9000/example/index.html'],
+		urls: ['http://localhost:3000/'],
 		depth: 1,
-    html: 1,
-    resultBaseDir: 'coverage/Sitespeed/'
+		html: 1,
+		resultBaseDir: 'coverage/Sitespeed/'
 	});
-}; 
+};

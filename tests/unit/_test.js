@@ -14,8 +14,3 @@ requireAll({
 	dirname: __dirname + '/../../app/components/',
 	filter: /(.+spec)\.jsx$/
 });
-
-// Require any specs within the unit specs folder
-requireAll({
-	dirname: __dirname + '/specs/'
-});
