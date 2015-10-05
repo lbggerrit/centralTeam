@@ -1,9 +1,9 @@
 var
 	React = require('react'),
 	ReactRouter = require('react-router');
-	//Link = ReactRouter.Link;
+//Link = ReactRouter.Link;
 
-	// build
+// build
 
 var Header = React.createClass({
 	render: function() {
@@ -15,11 +15,17 @@ var Header = React.createClass({
 
 						</div>
 						<div className="col-md-8">
-						<nav className="text-right">
-							<ul className="inline-list">
-								<li><a href="/api/quote/aapl">Get Quote For AAPL</a></li>
-							</ul>
-						</nav>
+							<nav className="text-right">
+								<ul className="inline-list">
+									<li><a href="/api/quote/aapl" target="_new">Get quote for AAPL over public WSDL</a>
+									</li>
+									<li><a href="/api/salsa/hello" target="_new">Hello from SALSA</a></li>
+									<li><a href="/api/salsa/product-names" target="_new">Product names from
+										SALSA</a></li>
+									<li><a href="/api/salsa/product-names-mock" target="_new">Product names mocked
+										from SALSA</a></li>
+								</ul>
+							</nav>
 						</div>
 					</div>
 				</div>
