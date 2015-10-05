@@ -6,8 +6,8 @@ var
 /**
  * @class ActionClass
  * @description basic class wrapper that automatically registers the class
- *              so that the actions can be used globally and they are added
- *              to their respective store. 
+ * so that the actions can be used globally and they are added
+ * to their respective store.
  */
 class ActionClass {
 	constructor(storeName) {
