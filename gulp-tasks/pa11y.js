@@ -5,4 +5,4 @@ module.exports = function (gulp, plugins) {
     timeout: 20000,
 		reporter: 'console'
 	});
-};
+}; 
