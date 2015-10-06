@@ -42,7 +42,7 @@ var MockData = React.createClass({
 	},
 	render: function() {
 		return (
-			<div className="stock-quotes">
+			<div className="mock-data">
 				<a href="#" className="btn btn-primary" onClick={this.getDataEvent}>{this.props.buttonTitle}</a>
 				<ul className="data-list">
 					{this.getRenderedData()}
