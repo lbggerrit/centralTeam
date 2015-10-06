@@ -60,7 +60,7 @@ var App = React.createClass({
 							<StockQuotes />
 						</div>
 						<div className="col-md-6">
-							<MockData dataUrl="/api/salsa/product-names-mock" buttonTitle="Get mocked data from Salsa - James McLeod" />
+							<MockData dataUrl="/api/salsa/product-names-mock" buttonTitle="Get mocked data from Salsa" />
 						</div>
 					</div>
 				</div>
