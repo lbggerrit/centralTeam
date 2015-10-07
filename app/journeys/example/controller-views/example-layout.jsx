@@ -5,7 +5,8 @@ var React = require('react'),
 	SelectList = require('../../../components/select-list/select-list.jsx'),
 	Header = require('../../../components/header/header.jsx'),
 	fluxHelper = require('../../../flux/helper.js'),
-	StockQuotes = require('../../../components/stock-quotes/stock-quotes.jsx');
+	StockQuotes = require('../../../components/stock-quotes/stock-quotes.jsx'),
+	MockData = require('../../../components/mock-data/mock-data.jsx');
 
 var App = React.createClass({
 	getInitialState: function() {
@@ -52,10 +53,14 @@ var App = React.createClass({
 		return (
 			<div>
 				<Header />
+
 				<div className="container">
 					<div className="row">
-						<div className="col-md-12">
+						<div className="col-md-6">
 							<StockQuotes />
+						</div>
+						<div className="col-md-6">
+							<MockData dataUrl="/api/salsa/product-names-mock" buttonTitle="Get mocked data from Salsa" />
 						</div>
 					</div>
 				</div>

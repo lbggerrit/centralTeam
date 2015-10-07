@@ -1,4 +1,8 @@
+var url = require('url');
+var proxy = require('proxy-middleware');
 module.exports = function(gulp, plugins) {
+	var proxyOptions = url.parse('http://localhost:3000/api');
+	proxyOptions.route = '/api';
 	return function() {
 		plugins.browserSync.init({
 			port: 9000,
@@ -8,15 +12,7 @@ module.exports = function(gulp, plugins) {
 					'/data': 'mockdata'
 				},
 				directory: true,
-				middleware: function(req, res, next) {
-					if (req.url.indexOf('api/quote/aapl') !== -1) {
-						var wsdlHandler = require('../server/utils/wsdl-handler.js'),
-							url = 'http://www.webservicex.com/stockquote.asmx?wsdl',
-							args = {symbol: 'AAPL'};
-						wsdlHandler.run(url, args, 'GetQuote', res);
-					}
-					next();
-				}
+				middleware: [proxy(proxyOptions)]
 			},
 			open: false,
 			logLevel: 'silent',

@@ -16,15 +16,19 @@ var self = module.exports = {
 			}
 			client[operation](args, function(err, result) {
 				result = result[Object.keys(result)[0]];
-				if (result.charAt(0) === '<') {
+				if ((typeof result === 'string') && (result.charAt(0) === '<')) {
 					parseString(result, function(err, json) {
 						result = JSON.stringify(json);
 					});
+				} else {
+					result = JSON.stringify(result);
 				}
-				res.writeHead(200, {
-					'Content-Length': result.length,
-					'Content-Type': 'application/json'
-				});
+				if (!res._headerSent) {
+					res.writeHead(200, {
+						'Content-Length': result.length,
+						'Content-Type': 'application/json'
+					});
+				}
 				res.end(result);
 			}, {timeout: 5000});
 		});

@@ -6,6 +6,7 @@
   "license": "",
   "dependencies": {
     "body-parser": "^1.13.3",
+    "cfenv": "^1.0.3",
     "config": "^1.16.0",
     "deep-diff": "^0.3.2",
     "ejs": "^2.3.4",
@@ -21,6 +22,7 @@
     "react": "^0.13.3",
     "react-router": "^1.0.0-rc1",
     "require-all": "^1.1.0",
+    "serve-favicon": "^2.3.0",
     "soap": "^0.9.4",
     "vision": "^3.0.0",
     "xml2js": "^0.4.12",
@@ -62,9 +64,11 @@
     "karma-react-jsx-preprocessor": "^0.1.1",
     "keymirror": "^0.1.1",
     "node-notifier": "^4.2.3",
+    "proxy-middleware": "^0.14.0",
     "reactify": "^1.1.1",
     "require-dir": "^0.3.0",
     "uglifyify": "^3.0.1",
+    "url": "^0.11.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "engines": {

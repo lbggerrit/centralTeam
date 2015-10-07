@@ -96,6 +96,12 @@ gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
 
 	gulp
 		.src([
+			'app/assets/icons/**/*'
+		])
+		.pipe(gulp.dest(config.buildPath + config.buildPathPublic + '/assets/icons'));
+
+	gulp
+		.src([
 			'mockdata/*'
 		])
 		.pipe(gulp.dest(config.buildPath + config.buildPathPublic + '/data'));

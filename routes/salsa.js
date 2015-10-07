@@ -25,7 +25,7 @@ module.exports = function(app) {
 			args = {
 				input: 'Tom'
 			};
-		wsdlHandler.run(url, args, 'modifyCommunicationProfiles', res);
+		wsdlHandler.run(url, args, 'sayHello', res);
 	});
 
 	app.get('/api/salsa/product-names', function(req, res, next) {
@@ -40,40 +40,13 @@ module.exports = function(app) {
 	});
 
 	app.get('/api/salsa/product-names-mock', function(req, res, next) {
-		//var wsdlHandler = require('../server/utils/wsdl-handler.js'),
-		//	url = 'http://condorsalsa.lbg.eu-gb.mybluemix.net/service2/wsdl?wsdl',
-		//	args = {
-		//		request: {
-		//			header: ''
-		//		}
-		//	};
-		//wsdlHandler.run(url, args, 'modifyCommunicationProfiles', res);
-		var sampleJson,
-			data;
-		sampleJson = {
-			'response': {
-				'involvedParty': {
-					'account': [
-						{'productName': 'Monthly Saver'},
-						{'productName': 'Easy Saver'},
-						{'productName': 'Cash ISA Saver'},
-						{'productName': 'Private Banking Bridging Loan'},
-						{'productName': 'Private Banking Bridging Loan'},
-						{'productName': 'Monthl00005'},
-						{'productName': 'Monthly Saver'},
-						{'productName': 'Premier'},
-						{'productName': 'Easy Saver'},
-						{'productName': 'Monthly Saver'},
-						{'productName': 'Monthly Saver'}
-					]
+		var wsdlHandler = require('../server/utils/wsdl-handler.js'),
+			url = 'http://condorsalsa.lbg.eu-gb.mybluemix.net/service2/wsdl?wsdl',
+			args = {
+				request: {
+					header: ''
 				}
-			}
-		};
-		data = JSON.stringify(sampleJson);
-		res.writeHead(200, {
-			'Content-Length': data.length,
-			'Content-Type': 'application/json'
-		});
-		res.end(data);
+			};
+		wsdlHandler.run(url, args, 'modifyCommunicationProfiles', res);
 	});
 };
