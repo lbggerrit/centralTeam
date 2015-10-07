@@ -119,6 +119,10 @@ gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
 	gulp
 		.src('app.js')
 		.pipe(gulp.dest(config.buildPath));
+
+	gulp
+		.src('package.json')
+		.pipe(gulp.dest(config.buildPath));
 });
 
 gulp.task('karma', function(done) {
