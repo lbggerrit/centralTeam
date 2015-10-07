@@ -1,3 +1,5 @@
+/* eslint-disable */
+/* jscs: disable */
 // Karma configuration
 // Generated on Sun Oct 04 2015 09:24:29 GMT+0100 (BST)
 
@@ -5,7 +7,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '../',
 
 
     // frameworks to use
@@ -15,8 +17,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'karma-globals.js',
+      'tests/karma-globals.js',
       'app/components/**/*.spec.jsx'
+      //'app/components/**/*.jsx'
     ],
 
 
@@ -28,7 +31,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'unit/_test.js': ['browserify'],
+      'tests/unit/_test.js': ['browserify'],
       'app/components/**/*.spec.jsx': ['browserify', 'react-jsx', 'coverage']
     },
 
@@ -40,7 +43,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress', 'coverage', 'html'],
 
     coverageReporter: {
        type : 'html',

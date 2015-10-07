@@ -1,6 +1,6 @@
-var requireDir = require('require-dir');
+var requireAll = require('require-all');
 
-var stores = requireDir('../../app/flux/stores');
+var stores = requireAll(__dirname + '/../../app/flux/stores');
 
 var storeData = {};
 

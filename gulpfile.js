@@ -45,12 +45,14 @@ var config = {
 };
 
 var
-	requireDir = require('require-dir'),
-	tasks = requireDir('./gulp-tasks'),
+	requireAll = require('require-all'),
+	tasks = requireAll(__dirname + '/gulp-tasks/'),
 	task;
 
 for (task in tasks) {
-	gulp.task(task, tasks[task](gulp, plugins, config));
+	if (typeof tasks[task] === 'function') {
+		gulp.task( task, tasks[task](gulp, plugins, config) );
+	}
 }
 
 gulp.task('default', ['browserSync', 'sass', 'browserify'], function() {
@@ -121,8 +123,7 @@ gulp.task('production', ['sass', 'browserify', 'ejs'], function() {
 
 gulp.task('karma', function(done) {
 	new plugins.KarmaServer({
-		configFile: __dirname + '/karma.conf.js',
-		singleRun: true
+		configFile: __dirname + '/tests/karma.conf.js'
 	}, done).start();
 });
 
