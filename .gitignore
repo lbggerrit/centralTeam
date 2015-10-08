@@ -9,5 +9,4 @@ app/assets/js/bundles
 app/assets/css
 coverage
 *.log
-dist/
-
+dist

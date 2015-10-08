@@ -32,7 +32,8 @@ var config = {
 		'app/flux/**/*{.js,.jsx}'
 	],
 	jasmine: {
-		tests: 'tests/unit/'
+		tests: 'tests/unit/',
+		restTests: 'tests/rest/jasmine/**'
 	},
 	sass: [
 		'app/sass/**/*.{sass,scss}',
@@ -131,4 +132,4 @@ gulp.task('karma', function(done) {
 	}, done).start();
 });
 
-gulp.task('full-test', ['test', 'karma', 'sitespeed', 'pa11y']);
+gulp.task('full-test', ['test', 'jasmine-rest-test', 'karma', 'sitespeed', 'pa11y']);
