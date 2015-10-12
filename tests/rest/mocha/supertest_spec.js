@@ -1,5 +1,4 @@
-var
-	expect = require('chai').expect,
+var expect = require('chai').expect,
 	supertest = require('supertest'),
 	api = supertest('http://localhost:3000');
 

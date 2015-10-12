@@ -1,5 +1,4 @@
-var
-	request = require('request'),
+var request = require('request'),
 	helloBarRestEndPoint = 'http://localhost:3000/api/hello/bar';
 
 describe('The REST end point /api/hello/bar', function() {

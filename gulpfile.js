@@ -132,4 +132,4 @@ gulp.task('karma', function(done) {
 	}, done).start();
 });
 
-gulp.task('full-test', ['test', 'jasmine-rest-test', 'karma', 'sitespeed', 'pa11y']);
+gulp.task('full-test', ['test', 'karma', 'sitespeed', 'pa11y']);

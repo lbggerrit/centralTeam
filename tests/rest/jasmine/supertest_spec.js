@@ -1,5 +1,4 @@
-var
-	supertest = require('supertest'),
+var supertest = require('supertest'),
 	api = supertest('http://localhost:3000');
 
 describe('The REST end point /api/hello/foo', function() {

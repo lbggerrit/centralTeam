@@ -1,28 +1,22 @@
-var
-	fs = require('fs'),
-	path = require('path'),
-	express = require('express'),
+var express = require('express'),
 	favicon = require('serve-favicon'),
-	app = express(),
-	directorys = [
+	expressApp = express(),
+	expressAppRouter = express.Router(),
+	config = require('./server/config').init(),
+	directories = [
 		'www/'
-	],
-	RouteDir = 'routes',
-	files = fs.readdirSync(RouteDir),
-	config = require('./server/config').init();
+	];
 
-directorys.map(function(directory) {
-	app.use(express.static(directory));
+directories.map(function(directory) {
+	expressApp.use(express.static(directory));
 });
 
-files.forEach(function(file) {
-	var filePath = path.resolve('./', RouteDir, file),
-		route = require(filePath);
-	route(app);
+expressApp.use(favicon(__dirname + config.faviconPath));
+expressApp.use('/api', require('./server/utils/router').getRoute(expressAppRouter, './server/routes/api.js'));
+expressApp.use(function(req, res, next) {
+	res.status(404);
+	res.end('404 Page Not Found');
 });
-
-app.use(favicon(__dirname + config.faviconPath));
-
-app.listen(config.appEnv.port, config.appEnv.bind, function() {
+expressApp.listen(config.appEnv.port, config.appEnv.bind, function() {
 	console.log('Server starting on ' + config.appEnv.url);
 });

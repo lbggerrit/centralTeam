@@ -1,5 +1,4 @@
-var
-	isDev = process.argv.indexOf('--isDev') > -1 ? true : false,
+var isDev = process.argv.indexOf('--isDev') > -1 ? true : false,
 	cfAppEnv = require('cfenv').getAppEnv();
 
 module.exports = {
